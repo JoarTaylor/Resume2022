@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Mono&family=Roboto+Slab&display=swap');
+
+/*general styling*/
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'open sans', Arial, Helvetica, sans-serif;
+}
+
+main {
+    width: 70vw;
+}
+
+.grid-container > * {
+    font-size: 1rem;
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+    color: black;
+}
+
+.profile-picture img  {
+    height: auto;
+    width: 200px;
+    display: block;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.4);
+    border-radius: 10%; 
+} 
+
+.portfolio-projekt img {
+    height: auto;
+    width: 250px;
+    display: block;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.4);
+}
+
+.portfolio-image {
+    width: 50%;
+    height: auto;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+/*nav-styling*/
+nav {
+    grid-area: nav;
+}
+
+.menu {
+    display: flex;
+    align-self: flex-start;
+    flex:1;
+    width: 100%;
+    box-shadow: 0 -3px 4px 0 rgba(0,0,0,.4);
+    height: 7vh;
+    margin: 3vh 0 3vh 0; 
+}
+
+.menu li {
+    display: flex;
+    flex: 1;
+    cursor: pointer;
+}
+
+.menu li a {
+    display: flex;
+    flex: 1;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+input.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: none;
+}
+
+header {
+    grid-area: hh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.name {
+    text-align: center;
+    font-size: 30px;
+    margin-left:  1rem;
+}
+
+h2 {
+    padding: 2vh;
+}
+
+p {
+    margin: 0 4vw;
+    align-content: flex-start;
+    text-align: center;
+    height: 10vh;
+}
+
+.main-section {
+    grid-area: ms;
+    text-align: center;
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.pi {
+    justify-self: center;
+    align-self:  flex-end;
+    border-top: 10px solid #006d5b;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.9em;
+}
+
+ul li  {
+    margin-top: 1vh;
+}
+
+/* info item styling */
+.info {
+    grid-area: ii;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 2vh;
+}
+
+.info-content{
+    display: flex;
+    flex-direction: row;
+}
+
+.left-listitems {
+    text-align: end;
+    font-weight: bold;
+    padding-right: 1vw;
+    list-style: none;
+}
+
+.right-listitems {
+    font-weight: bold;
+    padding-left: 1vw;
+    list-style: none;
+}
+
+.left-info-items {
+    border-right: 0.2px solid rgb(197, 194, 194);
+}
+
+/*general layout for desktop*/
+.grid-container {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-areas:
+    'nav nav nav nav nav'
+    'hh hh hh hh hh'
+    'ms ms ms ms ms '
+    'ii ii ii ii ii '
+    ;
+}
+
+/*styling for viewing specific page*/
+.contact-page, .about-page, .resume-page, .portfolio-page{
+    position: relative;
+}
+
+.contact-page::after, .about-page::after, .resume-page::after, .portfolio-page::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    margin: auto;
+    width: 50%;
+    right: 0;
+    left: 0;
+    border: 7px solid #006d5b;
+    border-top-width: 0;
+}
+
+.menu li a:hover {
+    background-color: #006d5b;
+    color: white;
+}
+
+.content-main-section {
+    display: flex;
+    padding-bottom: 2vh;
+}
+
+.left-article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    margin-right: 1vw;
+}
+
+.right-article {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*resume page styling*/
+
+.resume-section {
+    text-align: start;
+}
+
+.resume-main-section h4 {
+    text-align: center;
+}
+
+/*layout for mobile*/
+@media screen and (max-width: 600px){
+    main {
+        width: 100vw;
+    }
+    .main-nav {
+        display: none;
+    }
+
+    .name {
+        margin: 0;
+    }
+
+    .main-nav {
+        height: 30vh;
+        width: 100;
+    }
+
+    .menu {
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        background-color:rgb(232, 232, 232);
+        box-shadow: none;
+        border-radius: 0;
+        margin: 0;
+    }
+
+    .content-main-section {
+        flex-direction: column;
+        margin: 1vh;
+        
+    }
+
+    input.nav-toggle {
+        display: block;
+        grid-area: nt;
+        display: none;
+    }
+
+    .nav-toggle-label {
+        display: block;
+        display: flex;
+        grid-area: nt;
+        font-size: 5vh;
+        text-align: center;
+        margin-top: 0.5vh;
+        margin-right: 2vh;
+        justify-content: right;
+        align-items: flex-start;
+        z-index: 1;
+        cursor: pointer;
+    }
+
+    input.nav-toggle:checked ~ nav {
+        display: block;
+    }
+
+    .profile-picture img {
+        width: 100px;
+        margin: 5vh 0 0 0
+    }
+
+    .menu li a {
+        text-align: center;
+    }
+
+    .main-nav {
+        grid-area: hh;
+    }
+
+    .main-section {
+        margin-left: 3vw;
+    }
+
+    .grid-container {
+        grid-template-areas: 
+    '. hh hh hh hh nt'
+    'ms ms ms ms ms ms'
+    'ii ii ii ii ii ii'
+    ;
+    }
+
+    .contact-page::after, .about-page::after, .resume-page::after, .portfolio-page::after {
+        border: none;
+    }
+
+    .menu {
+        text-align: left;
+    }
+
+   .about, .resume, .portfolio {
+    border-bottom: 0.5px solid white;
+   }
+    
+    .menu li a:hover {
+        color: black;
+    }
+
+    .about-page, .portfolio-page, .contact-page, .resume-page {
+       border-left:  15px solid #006d5b;
+    }
+
+}

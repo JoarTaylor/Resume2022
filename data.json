@@ -1,0 +1,49 @@
+ {
+    "Arbetslivserfarenhet" : [
+        "Prime Care  April - Sept 2022, fysioterapeut- konsult",
+
+        "Södersjukhuset Handkirurgiska Kliniken - Rehabenheten Aug 2020 - Maj 2021, Fysioterapeut specialistvård, internutbildad, vanlig & mer “halvakut” mottagning",
+
+        "Hedman & Malmén Sjukgymnastik Jan 2018 - maj 2019, Fysioterapeut, kliniskt arbete med inriktning på motions- och idrottsskador, samt ansvarig för vård via privatförsäkringar och kontakt med försäkringsbolag",
+
+        "Södermalms Kiropraktor & Rehabklinik Juli 2017 -  Dec 2017, Fysioterapeut primärvård"
+    ],
+
+    "Utbildning": [
+        "Chas Academy - Fullstack Javascript - pågående, klar 2024",
+
+        "Medicinsk Kandidatexamen- fysioterapeutexamen, Karolinska Institutet 180hp – Examen juni 2017",
+
+        "Från idé till tjänsteföretagande - hälso- och sjukvård i förvandling, Karolinska Institutet/ Stockholm School of Entrepreneurship 7.5hp",
+
+        "Statsvetenskap 1 30hp, Mikroekonomi med tillämpningar 15hp, Stockholms Universitet",
+
+        "OMT-Steg 1 HT 2017, Dry needling VT 2018",
+
+        "Militär Grundutbildning 2019/20 (11 mån), Mekaniker Mekanik Armén. Försvarsmaktens tekniska skola (FMTS), Halmstad",
+
+        "Gymnasieexamen 2014, Na/Na, profil matematik/programmering",
+
+        "Övrigt: BC-körkort (tung lastbil), truck-kort, Militär Skyddsvakt"
+    ],
+
+    "repoImages": [
+        {
+        "src": "images/joartaylorcv.png",
+        "id": "552507375",
+        "liveLink": ""
+        },{
+        "src": "images/weatherapp.png",
+        "id": "561219456",
+        "liveLink": "https://joartaylor.github.io/Weather-App/"
+        },
+        {
+        "src": "images/memorygame.png",
+        "id": "560862711",
+        "liveLink": "https://joartaylor.github.io/Memory-Game/"
+        }
+    ]
+        
+    
+}
+
