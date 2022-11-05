@@ -1,7 +1,7 @@
 const repoList = document.querySelector('.right-article ul');
 
 const url = "https://api.github.com/users/JoarTaylor/repos"
-const urlLocal = "/data.json";
+const urlLocal = "data.json";
 
 //get image-info from json-file
 async function getrepoImages() {
@@ -40,6 +40,7 @@ getRepos().then((data) => {
 
         
         imgRepoArray.forEach((repoImg) => {
+    
 
             //pair github-repo with image-id in json-file
             if(repoImg.id == repo.id) {
