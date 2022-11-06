@@ -4,7 +4,7 @@ const workList = document.querySelector('.left-article ul')
 const educationHeader = document.querySelector('.right-article h4')
 const educationList = document.querySelector('.right-article ul')
 
-let url= "/data.json";
+let url= "./data.json";
 async function getData() {
     let response = await fetch(url);
     if(response.ok) {
