@@ -5,6 +5,8 @@ const educationHeader = document.querySelector('.right-article h4')
 const educationList = document.querySelector('.right-article ul')
 
 let url= "./data.json";
+
+//get data from json file
 async function getData() {
     let response = await fetch(url);
     if(response.ok) {
@@ -16,29 +18,68 @@ async function getData() {
 }
 
 getData().then((data) => {
+    //create array from json files
     let workArray = Array.from(data.Arbetslivserfarenhet);
     let eductationArray = Array.from(data.Utbildning);
 
+    //create sortbuttons for education
+    const recentButton = document.createElement('button');
+    recentButton.innerHTML = "Senaste";
+    educationHeader.appendChild(recentButton);
+    const latestButton = document.createElement('button');
+    latestButton.innerHTML = "Tidigaste";
+    educationHeader.appendChild(latestButton);
 
-    eductationArray.forEach((course) => {
+    sortRecent();   
 
-        const eduDetails = document.createElement('li');
-        const eduDetailsList = document.createElement('ul');
-        eduDetailsList.className = "portfolio-list";
+//sort by recent education
+    recentButton.addEventListener('click', sortRecent);
+    function sortRecent() {
+        educationList.innerHTML = null;
+        eductationArray.sort(({Date:a}, {Date: b}) => b-a);
+        console.log(eductationArray);
+        eductationArray.forEach((course) => {
 
-        const eduEntries = Object.entries(course);
-        eduEntries.forEach(([key, value]) => {
-            console.log(key, value);
-            eduDetails.appendChild(eduDetailsList);
-            const eduDetailsItem = document.createElement('li');
-            eduDetailsItem.innerHTML = key + ': ' + value;
-            eduDetailsList.appendChild(eduDetailsItem);
-
-            educationList.appendChild(eduDetails);
-        })
-
-    })
+            const eduDetails = document.createElement('li');
+            const eduDetailsList = document.createElement('ul');
+            eduDetailsList.className = "education-list";
     
+            const eduEntries = Object.entries(course);
+            eduEntries.forEach(([key, value]) => {
+                eduDetails.appendChild(eduDetailsList);
+                const eduDetailsItem = document.createElement('li');
+                eduDetailsItem.innerHTML = key + ': ' + value;
+                eduDetailsList.appendChild(eduDetailsItem);
+    
+                educationList.appendChild(eduDetails);
+            })
+        })
+    }
+
+    //sort by earliest education
+    latestButton.addEventListener('click', sortEarliest); 
+    function sortEarliest() {
+        educationList.innerHTML = null;
+        eductationArray.sort(({Date:a}, {Date: b}) => a-b);
+        console.log(eductationArray);
+        eductationArray.forEach((course) => {
+
+            const eduDetails = document.createElement('li');
+            const eduDetailsList = document.createElement('ul');
+            eduDetailsList.className = "education-list";
+    
+            const eduEntries = Object.entries(course);
+            eduEntries.forEach(([key, value]) => {
+                eduDetails.appendChild(eduDetailsList);
+                const eduDetailsItem = document.createElement('li');
+                eduDetailsItem.innerHTML = key + ': ' + value;
+                eduDetailsList.appendChild(eduDetailsItem);
+    
+                educationList.appendChild(eduDetails);
+            })
+        })
+    }
+
     workArray.forEach((workplace) => {
         const workDetails = document.createElement('li');
         const workDetailsList = document.createElement('ul');
@@ -46,7 +87,6 @@ getData().then((data) => {
 
         const workEntries = Object.entries(workplace);
         workEntries.forEach(([key, value]) => {
-            console.log(key, value);
             workDetails.appendChild(workDetailsList);
             const workDetailsItem = document.createElement('li');
             workDetailsItem.innerHTML = key + ': ' + value;
