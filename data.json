@@ -1,69 +1,70 @@
  { "Arbetslivserfarenhet" : [
        
         {
-            "År": 2021,
-            "Yrke": "Fysioterapeut",
-            "Arbetsplats": "Södersjukhuset AB",
-            "Arbetsbeskrivning": " Aug 2020 - Maj 2021, internutbildad inom handkirurgisk rehabilitering, vanlig & mer “halvakut” mottagning"
+            "Jobtitle": "Fysioterapeut",
+            "Date": 2021,
+            "Company": "Södersjukhuset AB",
+            "Description": " Aug 2020 - Maj 2021, internutbildad inom handkirurgisk rehabilitering, vanlig & mer “halvakut” mottagning"
         }, 
         {
-            "År": 2019,
-            "Yrke": "Fysioterapeut",
-            "Arbetsplats": "Hedman & Malmén AB",
-            "Arbetsbeskrivning": "Jan 2018 - maj 2019, kliniskt arbete med inriktning på motions- och idrottsskador, samt ansvarig för vård via privatförsäkringar och kontakt med försäkringsbolag"
+            "Jobtitle": "Fysioterapeut",
+            "Date": 2019,
+            "Company": "Hedman & Malmén AB",
+            "Description": "Jan 2018 - maj 2019, kliniskt arbete med inriktning på motions- och idrottsskador, samt ansvarig för vård via privatförsäkringar och kontakt med försäkringsbolag"
         },
         {
-            "År": 2017,
-            "Yrke": "Fysioterapeut",
-            "Arbetsplats": "Södermalms Kiropraktor & Rehabklinik",
-            "Arbetsbeskrivning": "Juli 2017 -  Dec 2017, generell primärvård"
+            "Jobtitle": "Fysioterapeut",
+            "Date": 2017,
+            "Company": "Södermalms Kiropraktor & Rehabklinik",
+            "Description": "Juli 2017 -  Dec 2017, generell primärvård"
         }
     ],  
     
     "Utbildning": [
         {
-            "Date": 2022,
             "Education": "Fullstack Javascript",
+            "Date": 2022,
             "School": "Chas Academy",
             "Level": "Yrkeshögskola"
         }, 
         {
-            "Date": 2017,
             "Education": "Medicine kandidatexamen med huvudområdet fysioterapi, 180hp",
+            "Date": 2017,
             "School": "Karolinska Institutet",
             "Level": "Högskola"
         },
         {
-            "Date": 2017,
             "Education": "Från idé till tjänsteföretagande - hälso- och sjukvård i förvandling, 7.5hp",
+            "Date": 2017,
             "School": "Karolinska Institutet",
             "Level": "Högskola"
         },
         {
-            "Date": 2021,
             "Education": "Statsvetenskap 1, 30hp",
+            "Date": 2021,
             "School": "Stockholms Universitet",
             "Level": "Högskola"
         },
         {
-            "Date": 2022,
+            
             "Education": "Mikroekonomi med tillämpningar, 15hp",
+            "Date": 2022,
             "School": "Stockholms Universitet",
             "Level": "Högskola"
         },
         {
-            "Date": 2017,
             "Education": "OMT-Steg 1",
+            "Date": 2017,
             "School": "Sektionen för ortopedisk manuell terapi"
         },
         {
-            "Date": 2020,
             "Education": "Militär Grundutbildning, Mekaniker Mekanik Armén",
+            "Date": 2020,
             "School": "Försvarsmaktens tekniska skola (FMTS)"
         },
         {
-            "Date": 2014,
             "Education": "Gymnasieutbildning, inriktning natur/natur med profil matematik och programmering",
+            "Date": 2014,
             "School": "Kärrtorps gymnasium"
         }    
     ],

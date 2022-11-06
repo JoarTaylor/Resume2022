@@ -7,7 +7,7 @@ const joar = {
     Name: 'Joar',
     Birthday: 19951126,
     Hometown: 'Stockholm',
-    Freelance: 'Available'
+    Freelance: 'Upcoming'
 }
 
 //creating array from object

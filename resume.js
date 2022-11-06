@@ -3,6 +3,8 @@ const workHeader = document.querySelector('.left-article h4')
 const workList = document.querySelector('.left-article ul')
 const educationHeader = document.querySelector('.right-article h4')
 const educationList = document.querySelector('.right-article ul')
+const myDropDown = document.querySelector(".dropdown-content");
+const dropBtn = document.querySelector('.dropbtn');
 
 let url= "./data.json";
 
@@ -23,21 +25,44 @@ getData().then((data) => {
     let eductationArray = Array.from(data.Utbildning);
 
     //create sortbuttons for education
-    const recentButton = document.createElement('button');
-    recentButton.innerHTML = "Senaste";
-    educationHeader.appendChild(recentButton);
-    const latestButton = document.createElement('button');
-    latestButton.innerHTML = "Tidigaste";
-    educationHeader.appendChild(latestButton);
+    const recentOption = document.createElement('div');
+    recentOption.innerHTML = "Senaste";
+    myDropDown.appendChild(recentOption);
 
+    const latestOption = document.createElement('div');
+    latestOption.innerHTML = "Tidigaste";
+
+    myDropDown.appendChild(latestOption);
+
+    //creating dropdown
+    dropBtn.addEventListener('click', dropDown);
+
+    function dropDown() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+    //recent education as default
     sortRecent();   
 
 //sort by recent education
-    recentButton.addEventListener('click', sortRecent);
+    recentOption.addEventListener('click', sortRecent);
     function sortRecent() {
         educationList.innerHTML = null;
         eductationArray.sort(({Date:a}, {Date: b}) => b-a);
-        console.log(eductationArray);
         eductationArray.forEach((course) => {
 
             const eduDetails = document.createElement('li');
@@ -48,7 +73,7 @@ getData().then((data) => {
             eduEntries.forEach(([key, value]) => {
                 eduDetails.appendChild(eduDetailsList);
                 const eduDetailsItem = document.createElement('li');
-                eduDetailsItem.innerHTML = key + ': ' + value;
+                eduDetailsItem.innerHTML = `<span style="font-weight: bold;">${key}:</span> `  + value;
                 eduDetailsList.appendChild(eduDetailsItem);
     
                 educationList.appendChild(eduDetails);
@@ -57,11 +82,10 @@ getData().then((data) => {
     }
 
     //sort by earliest education
-    latestButton.addEventListener('click', sortEarliest); 
+    latestOption.addEventListener('click', sortEarliest); 
     function sortEarliest() {
         educationList.innerHTML = null;
         eductationArray.sort(({Date:a}, {Date: b}) => a-b);
-        console.log(eductationArray);
         eductationArray.forEach((course) => {
 
             const eduDetails = document.createElement('li');
@@ -70,16 +94,17 @@ getData().then((data) => {
     
             const eduEntries = Object.entries(course);
             eduEntries.forEach(([key, value]) => {
+                
                 eduDetails.appendChild(eduDetailsList);
                 const eduDetailsItem = document.createElement('li');
-                eduDetailsItem.innerHTML = key + ': ' + value;
+                eduDetailsItem.innerHTML = `<span style="font-weight: bold;">${key}:</span> `  + value;
                 eduDetailsList.appendChild(eduDetailsItem);
-    
                 educationList.appendChild(eduDetails);
             })
         })
     }
 
+    //out work-info
     workArray.forEach((workplace) => {
         const workDetails = document.createElement('li');
         const workDetailsList = document.createElement('ul');
@@ -89,7 +114,7 @@ getData().then((data) => {
         workEntries.forEach(([key, value]) => {
             workDetails.appendChild(workDetailsList);
             const workDetailsItem = document.createElement('li');
-            workDetailsItem.innerHTML = key + ': ' + value;
+            workDetailsItem.innerHTML = `<span style="font-weight: bold;">${key}:</span> `  + value;
             workDetailsList.appendChild(workDetailsItem);
 
             workList.appendChild(workDetails);

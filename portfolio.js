@@ -35,6 +35,9 @@ getRepos().then((data) => {
     let githubArray = Array.from(data);
 
     githubArray.forEach((repo) => {
+
+        const repoItem = document.createElement('li');
+        repoList.appendChild(repoItem);
         
     getrepoImages().then((imgData) => {
         let imgRepoArray = imgData.repoImages;
@@ -44,28 +47,35 @@ getRepos().then((data) => {
 
             //pair github-repo with image-id in json-file
             if(repoImg.id == repo.id) {
-                let portfolioImage = document.createElement('img');
+                const portfolioImage = document.createElement('img');
                 portfolioImage.className = "portfolio-image";
                 portfolioImage.src = repoImg.src;
 
-                let repoDescription = document.createElement('li');
-                repoDescription.innerHTML = repo.name + `<br>` + repo.description  + `<br>`;
-
-                let repoLink = document.createElement('a');
-                repoLink.href = repo.html_url;
-                repoLink.innerHTML = " Check out the repository";
+                const repoDescription = document.createElement('li');
+                repoDescription.innerHTML = `<span style="font-weight: bold; font-size: 1.2rem;">${repo.name}</span> ` + `<br>` + repo.description  + `<br>`;
                 
-                let liveRepoLink = document.createElement('a');
+
+                const repoLink = document.createElement('a');
+                repoLink.href = repo.html_url;
+                repoLink.style.fontSize = "1rem";
+                repoLink.style.color = "#006d44";
+                
+                repoLink.innerHTML = `<br>` + " Check out the repository";
+                
+                const liveRepoLink = document.createElement('a');
                 liveRepoLink.href = repoImg.liveLink;
                 liveRepoLink.target = "_blank";
                 liveRepoLink.rel = "noreferrer noopener";
-                
 
-                repoDescription.appendChild(repoLink);
-                repoList.appendChild(repoDescription);
-                repoList.appendChild(liveRepoLink);
+                const repoDetailList = document.createElement('ul');
+                repoDetailList.className = "repo-item-list";
+
+                repoItem.appendChild(repoDetailList);
+                repoDetailList.appendChild(repoDescription);
+                repoDetailList.appendChild(repoDescription);
+                repoDetailList.appendChild(liveRepoLink);
+                repoDetailList.appendChild(repoLink);
                 liveRepoLink.appendChild(portfolioImage);
-               
             }
         })
         
