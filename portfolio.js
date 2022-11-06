@@ -18,11 +18,12 @@ async function getrepoImages() {
 //get repo-info from github-api
 async function getRepos() {
     let response = await fetch(url);
+    repoList.innerHTML = "Fetching data..."
     if(response.ok) {
         repoList.innerHTML = null;
         let data = await response.json();
         return data;
-    } else {
+    } else{
         console.log('HTTP-Error: ' + response.status);
         repoList.innerHTML = "Github api-key not working, try again later";
     }
@@ -38,7 +39,6 @@ getRepos().then((data) => {
     getrepoImages().then((imgData) => {
         let imgRepoArray = imgData.repoImages;
 
-        
         imgRepoArray.forEach((repoImg) => {
     
 

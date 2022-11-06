@@ -1,36 +1,77 @@
- {
-    "Arbetslivserfarenhet" : [
-        "Prime Care  April - Sept 2022, fysioterapeut- konsult",
-
-        "Södersjukhuset Handkirurgiska Kliniken - Rehabenheten Aug 2020 - Maj 2021, Fysioterapeut specialistvård, internutbildad, vanlig & mer “halvakut” mottagning",
-
-        "Hedman & Malmén Sjukgymnastik Jan 2018 - maj 2019, Fysioterapeut, kliniskt arbete med inriktning på motions- och idrottsskador, samt ansvarig för vård via privatförsäkringar och kontakt med försäkringsbolag",
-
-        "Södermalms Kiropraktor & Rehabklinik Juli 2017 -  Dec 2017, Fysioterapeut primärvård"
-    ],
-
+ { "Arbetslivserfarenhet" : [
+       
+        {
+            "År": 2021,
+            "Yrke": "Fysioterapeut",
+            "Arbetsplats": "Södersjukhuset AB",
+            "Arbetsbeskrivning": " Aug 2020 - Maj 2021, internutbildad inom handkirurgisk rehabilitering, vanlig & mer “halvakut” mottagning"
+        }, 
+        {
+            "År": 2019,
+            "Yrke": "Fysioterapeut",
+            "Arbetsplats": "Hedman & Malmén AB",
+            "Arbetsbeskrivning": "Jan 2018 - maj 2019, kliniskt arbete med inriktning på motions- och idrottsskador, samt ansvarig för vård via privatförsäkringar och kontakt med försäkringsbolag"
+        },
+        {
+            "År": 2017,
+            "Yrke": "Fysioterapeut",
+            "Arbetsplats": "Södermalms Kiropraktor & Rehabklinik",
+            "Arbetsbeskrivning": "Juli 2017 -  Dec 2017, generell primärvård"
+        }
+    ],  
+    
     "Utbildning": [
-        "Chas Academy - Fullstack Javascript - pågående, klar 2024",
-
-        "Medicinsk Kandidatexamen- fysioterapeutexamen, Karolinska Institutet 180hp – Examen juni 2017",
-
-        "Från idé till tjänsteföretagande - hälso- och sjukvård i förvandling, Karolinska Institutet/ Stockholm School of Entrepreneurship 7.5hp",
-
-        "Statsvetenskap 1 30hp, Mikroekonomi med tillämpningar 15hp, Stockholms Universitet",
-
-        "OMT-Steg 1 HT 2017, Dry needling VT 2018",
-
-        "Militär Grundutbildning 2019/20 (11 mån), Mekaniker Mekanik Armén. Försvarsmaktens tekniska skola (FMTS), Halmstad",
-
-        "Gymnasieexamen 2014, Na/Na, profil matematik/programmering",
-
-        "Övrigt: BC-körkort (tung lastbil), truck-kort, Militär Skyddsvakt"
+        {
+            "Date": 2022,
+            "Education": "Fullstack Javascript",
+            "School": "Chas Academy",
+            "Level": "Yrkeshögskola"
+        }, 
+        {
+            "Date": 2017,
+            "Education": "Medicine kandidatexamen med huvudområdet fysioterapi, 180hp",
+            "School": "Karolinska Institutet",
+            "Level": "Högskola"
+        },
+        {
+            "Date": 2017,
+            "Education": "Från idé till tjänsteföretagande - hälso- och sjukvård i förvandling, 7.5hp",
+            "School": "Karolinska Institutet",
+            "Level": "Högskola"
+        },
+        {
+            "Date": 2021,
+            "Education": "Statsvetenskap 1, 30hp",
+            "School": "Stockholms Universitet",
+            "Level": "Högskola"
+        },
+        {
+            "Date": 2022,
+            "Education": "Mikroekonomi med tillämpningar, 15hp",
+            "School": "Stockholms Universitet",
+            "Level": "Högskola"
+        },
+        {
+            "Date": 2017,
+            "Education": "OMT-Steg 1",
+            "School": "Sektionen för ortopedisk manuell terapi"
+        },
+        {
+            "Date": 2020,
+            "Education": "Militär Grundutbildning, Mekaniker Mekanik Armén",
+            "School": "Försvarsmaktens tekniska skola (FMTS)"
+        },
+        {
+            "Date": 2014,
+            "Education": "Gymnasieutbildning, inriktning natur/natur med profil matematik och programmering",
+            "School": "Kärrtorps gymnasium"
+        }    
     ],
 
     "repoImages": [
         {
         "src": "images/joartaylorcv.png",
-        "id": "552507375",
+        "id": "562289891",
         "liveLink": "https://joartaylor.github.io/Resume2022/index.html"
         },{
         "src": "images/weatherapp.png",
