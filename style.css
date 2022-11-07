@@ -56,7 +56,6 @@ main {
     margin: 5vh;
 }
 
-
 /*resume-styling*/
 .right-article-header {
     display: flex;
@@ -64,11 +63,29 @@ main {
 }
 
 .education-list, .work-list {
-    margin: 5vh;
+    background-color: #fff9f9;
+    padding: 1vh;
+    border-radius: 10px;
+    box-shadow: 1px 5px 10px -4px rgba(0,0,0,0.71);
+    -webkit-box-shadow: 1px 5px 10px -4px rgba(0,0,0,0.71);
+    -moz-box-shadow: 1px 5px 10px -4px rgba(0,0,0,0.71);
 }
 
+.education-list {
+    margin: 0vh 0vh 4vh 2vh;
+}
+
+.work-list {
+    margin: 0vh 2vh 4vh 0vh;
+}
+
+.education-list > li:first-child {
+    margin-top: none;
+}
+
+/*resume drop-down*/
 .dropbtn {
-    padding: 2vh;
+    padding: 1vh;
     border: none;
     cursor: pointer;
 }
@@ -82,11 +99,13 @@ main {
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f1f1f1;
+    background-color: #fffcfc;
     overflow: auto;
     min-width: 100%;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    font-size: 0.8rem;
+    text-align: center;
 }
 
 .dropdown-content div {
@@ -269,7 +288,6 @@ ul li  {
     flex-direction: column;
     align-items: center;
     flex: 1;
-    margin-right: 1vw;
 }
 
 .right-article {
@@ -283,10 +301,6 @@ ul li  {
 
 .resume-section {
     text-align: start;
-}
-
-.resume-main-section h4 {
-    text-align: center;
 }
 
 /*layout for mobile*/
@@ -360,10 +374,6 @@ ul li  {
         grid-area: hh;
     }
 
-    .main-section {
-        margin-left: 3vw;
-    }
-
     .grid-container {
         grid-template-areas: 
     '. hh hh hh hh nt'
@@ -390,6 +400,15 @@ ul li  {
 
     .about-page, .portfolio-page, .contact-page, .resume-page {
        border-left:  15px solid #006d5b;
+    }
+
+    /*resume-list-styling*/
+    .education-list {
+        margin: 0vh 2vh 4vh 2vh;
+    }
+
+    .work-list {
+        margin: 0vh 2vh 4vh 2vh;
     }
 
 }

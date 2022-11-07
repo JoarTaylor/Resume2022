@@ -62,7 +62,7 @@ window.onclick = function(event) {
     recentOption.addEventListener('click', sortRecent);
     function sortRecent() {
         educationList.innerHTML = null;
-        eductationArray.sort(({Date:a}, {Date: b}) => b-a);
+        eductationArray.sort(({Completion:a}, {Completion: b}) => b-a);
         eductationArray.forEach((course) => {
 
             const eduDetails = document.createElement('li');
@@ -85,7 +85,7 @@ window.onclick = function(event) {
     latestOption.addEventListener('click', sortEarliest); 
     function sortEarliest() {
         educationList.innerHTML = null;
-        eductationArray.sort(({Date:a}, {Date: b}) => a-b);
+        eductationArray.sort(({Completion:a}, {Completion: b}) => a-b);
         eductationArray.forEach((course) => {
 
             const eduDetails = document.createElement('li');

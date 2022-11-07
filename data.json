@@ -2,19 +2,19 @@
        
         {
             "Jobtitle": "Fysioterapeut",
-            "Date": 2021,
+            "Completion": 2021,
             "Company": "Södersjukhuset AB",
             "Description": " Aug 2020 - Maj 2021, internutbildad inom handkirurgisk rehabilitering, vanlig & mer “halvakut” mottagning"
         }, 
         {
             "Jobtitle": "Fysioterapeut",
-            "Date": 2019,
+            "Completion": 2019,
             "Company": "Hedman & Malmén AB",
             "Description": "Jan 2018 - maj 2019, kliniskt arbete med inriktning på motions- och idrottsskador, samt ansvarig för vård via privatförsäkringar och kontakt med försäkringsbolag"
         },
         {
             "Jobtitle": "Fysioterapeut",
-            "Date": 2017,
+            "Completion": 2017,
             "Company": "Södermalms Kiropraktor & Rehabklinik",
             "Description": "Juli 2017 -  Dec 2017, generell primärvård"
         }
@@ -23,48 +23,48 @@
     "Utbildning": [
         {
             "Education": "Fullstack Javascript",
-            "Date": 2022,
+            "Completion": 2024,
             "School": "Chas Academy",
             "Level": "Yrkeshögskola"
         }, 
         {
-            "Education": "Medicine kandidatexamen med huvudområdet fysioterapi, 180hp",
-            "Date": 2017,
+            "Education": "Medicine kandiCompletionxamen med huvudområdet fysioterapi, 180hp",
+            "Completion": 2017,
             "School": "Karolinska Institutet",
             "Level": "Högskola"
         },
         {
             "Education": "Från idé till tjänsteföretagande - hälso- och sjukvård i förvandling, 7.5hp",
-            "Date": 2017,
+            "Completion": 2017,
             "School": "Karolinska Institutet",
             "Level": "Högskola"
         },
         {
             "Education": "Statsvetenskap 1, 30hp",
-            "Date": 2021,
+            "Completion": 2021,
             "School": "Stockholms Universitet",
             "Level": "Högskola"
         },
         {
             
             "Education": "Mikroekonomi med tillämpningar, 15hp",
-            "Date": 2022,
+            "Completion": 2022,
             "School": "Stockholms Universitet",
             "Level": "Högskola"
         },
         {
             "Education": "OMT-Steg 1",
-            "Date": 2017,
+            "Completion": 2017,
             "School": "Sektionen för ortopedisk manuell terapi"
         },
         {
             "Education": "Militär Grundutbildning, Mekaniker Mekanik Armén",
-            "Date": 2020,
+            "Completion": 2020,
             "School": "Försvarsmaktens tekniska skola (FMTS)"
         },
         {
             "Education": "Gymnasieutbildning, inriktning natur/natur med profil matematik och programmering",
-            "Date": 2014,
+            "Completion": 2014,
             "School": "Kärrtorps gymnasium"
         }    
     ],
