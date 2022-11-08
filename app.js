@@ -10,7 +10,7 @@ const joar = {
     Freelance: 'Upcoming'
 }
 
-//creating array from object
+//creating array of keys and value-pair from object
 const joarEntries = Object.entries(joar);
 
 joarEntries.forEach(([key, value]) => {

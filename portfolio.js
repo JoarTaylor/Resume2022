@@ -1,7 +1,7 @@
-const repoList = document.querySelector('.right-article ul');
-
+const repoList = document.querySelector('.main-article ul');
 const url = "https://api.github.com/users/JoarTaylor/repos"
 const urlLocal = "./data.json";
+const repoHeader = document.querySelector('.main-section h3');
 
 //get image-info from json-file
 async function getrepoImages() {
@@ -18,16 +18,16 @@ async function getrepoImages() {
 //get repo-info from github-api
 async function getRepos() {
     let response = await fetch(url);
-    repoList.innerHTML = "Fetching data..."
     if(response.ok) {
         repoList.innerHTML = null;
         let data = await response.json();
         return data;
     } else{
-        console.log('HTTP-Error: ' + response.status);
-        repoList.innerHTML = "Github api-key not working, try again later";
+        repoList.innerHTML = null;
+        repoHeader.innerHTML = 'HTTP-error: ' + response.status;
     }
 }
+
 
 
 
@@ -51,34 +51,36 @@ getRepos().then((data) => {
                 portfolioImage.className = "portfolio-image";
                 portfolioImage.src = repoImg.src;
 
-                const repoDescription = document.createElement('li');
-                repoDescription.innerHTML = `<span style="font-weight: bold; font-size: 1.2rem;">${repo.name}</span> ` + `<br>` + repo.description  + `<br>`;
+                const repoName = document.createElement('h2');
+                repoName.innerHTML = repo.name;
+
+                const repoDescription = document.createElement('p');
+                repoDescription.innerHTML = repo.description;
                 
 
                 const repoLink = document.createElement('a');
                 repoLink.href = repo.html_url;
-                repoLink.style.fontSize = "1rem";
-                repoLink.style.color = "#006d44";
+                repoLink.className = "repo-link";
                 
-                repoLink.innerHTML = `<br>` + " Check out the repository";
                 
-                const liveRepoLink = document.createElement('a');
-                liveRepoLink.href = repoImg.liveLink;
-                liveRepoLink.target = "_blank";
-                liveRepoLink.rel = "noreferrer noopener";
+                repoLink.innerHTML = `<br>` +  `Github repo <i class='fa-solid fa-up-right-from-square'></i>`;
+                
+                const liveGameLink = document.createElement('a');
+                liveGameLink.href = repoImg.liveLink;
+                liveGameLink.target = "_blank";
+                liveGameLink.rel = "noreferrer noopener";
 
-                const repoDetailList = document.createElement('ul');
+                const repoDetailList = document.createElement('div');
                 repoDetailList.className = "repo-item-list";
 
                 repoItem.appendChild(repoDetailList);
+                repoDetailList.appendChild(repoName);
                 repoDetailList.appendChild(repoDescription);
-                repoDetailList.appendChild(repoDescription);
-                repoDetailList.appendChild(liveRepoLink);
+                repoDetailList.appendChild(liveGameLink);
                 repoDetailList.appendChild(repoLink);
-                liveRepoLink.appendChild(portfolioImage);
+                liveGameLink.appendChild(portfolioImage);
             }
         })
-        
     })
     })
 })

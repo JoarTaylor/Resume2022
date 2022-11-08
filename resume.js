@@ -65,16 +65,16 @@ window.onclick = function(event) {
         eductationArray.sort(({Completion:a}, {Completion: b}) => b-a);
         eductationArray.forEach((course) => {
 
-            const eduDetails = document.createElement('li');
-            const eduDetailsList = document.createElement('ul');
-            eduDetailsList.className = "education-list";
+            const eduDetails = document.createElement('ul');
+            const eduDescription = document.createElement('li');
+            eduDescription.className = "education-list";
     
             const eduEntries = Object.entries(course);
             eduEntries.forEach(([key, value]) => {
-                eduDetails.appendChild(eduDetailsList);
+                eduDetails.appendChild(eduDescription);
                 const eduDetailsItem = document.createElement('li');
                 eduDetailsItem.innerHTML = `<span style="font-weight: bold;">${key}:</span> `  + value;
-                eduDetailsList.appendChild(eduDetailsItem);
+                eduDescription.appendChild(eduDetailsItem);
     
                 educationList.appendChild(eduDetails);
             })
@@ -88,34 +88,34 @@ window.onclick = function(event) {
         eductationArray.sort(({Completion:a}, {Completion: b}) => a-b);
         eductationArray.forEach((course) => {
 
-            const eduDetails = document.createElement('li');
-            const eduDetailsList = document.createElement('ul');
-            eduDetailsList.className = "education-list";
-    
+            const eduDetails = document.createElement('ul');
+            const eduDescription = document.createElement('li');
+            eduDescription.className = "education-list";
+            
             const eduEntries = Object.entries(course);
             eduEntries.forEach(([key, value]) => {
                 
-                eduDetails.appendChild(eduDetailsList);
+                eduDetails.appendChild(eduDescription);
                 const eduDetailsItem = document.createElement('li');
                 eduDetailsItem.innerHTML = `<span style="font-weight: bold;">${key}:</span> `  + value;
-                eduDetailsList.appendChild(eduDetailsItem);
+                eduDescription.appendChild(eduDetailsItem);
                 educationList.appendChild(eduDetails);
             })
         })
     }
 
-    //out work-info
+    //output work-info
     workArray.forEach((workplace) => {
-        const workDetails = document.createElement('li');
-        const workDetailsList = document.createElement('ul');
-        workDetailsList.className = "work-list";
+        const workDetails = document.createElement('ul');
+        const workDescription = document.createElement('li');
+        workDescription.className = "work-list";
 
         const workEntries = Object.entries(workplace);
         workEntries.forEach(([key, value]) => {
-            workDetails.appendChild(workDetailsList);
+            workDetails.appendChild(workDescription);
             const workDetailsItem = document.createElement('li');
             workDetailsItem.innerHTML = `<span style="font-weight: bold;">${key}:</span> `  + value;
-            workDetailsList.appendChild(workDetailsItem);
+            workDescription.appendChild(workDetailsItem);
 
             workList.appendChild(workDetails);
         })

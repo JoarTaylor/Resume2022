@@ -1,1 +1,3 @@
-# Resume2022
+# Resume2022 
+# Joar Taylor
+# https://github.com/JoarTaylor/Resume2022

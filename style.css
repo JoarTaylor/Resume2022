@@ -53,7 +53,21 @@ main {
 }
 
 .repo-item-list {
+    display: flex;
+    flex-direction: column;
     margin: 5vh;
+    background-color: #fff9f9;
+    border-radius: 10px;
+    box-shadow: 1px 5px 10px -4px rgba(0,0,0,0.71);
+    -webkit-box-shadow: 1px 5px 10px -4px rgba(0,0,0,0.71);
+    -moz-box-shadow: 1px 5px 10px -4px rgba(0,0,0,0.71);
+}
+
+.repo-link {
+    text-align: right;
+    color: black;
+    justify-self: end;
+    padding: 0 2vh 1vh 0;
 }
 
 /*resume-styling*/
