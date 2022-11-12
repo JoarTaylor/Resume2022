@@ -37,25 +37,27 @@ main {
     border-radius: 10%; 
 } 
 
-.portfolio-projekt img {
-    height: auto;
-    width: 250px;
-    display: block;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.4);
+/*portfolio-styling*/
+.main-article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-/*portfolio-styling*/
 .portfolio-image {
-    width: 50%;
-    height: auto;
-    cursor: pointer;
-    border-radius: 10p
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
 }
 
 .repo-item-list {
     display: flex;
     flex-direction: column;
-    margin: 5vh;
+    align-items: center;
+    margin: 0 0 5vh 0;
+    width: 70%;
     background-color: #fff9f9;
     border-radius: 10px;
     box-shadow: 1px 5px 10px -4px rgba(0,0,0,0.71);
@@ -66,7 +68,7 @@ main {
 .repo-link {
     text-align: right;
     color: black;
-    justify-self: end;
+    align-self: end;
     padding: 0 2vh 1vh 0;
 }
 
@@ -202,7 +204,9 @@ p {
 
 .main-section {
     grid-area: ms;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .contact-content {
@@ -423,6 +427,11 @@ ul li  {
 
     .work-list {
         margin: 0vh 2vh 4vh 2vh;
+    }
+
+    /*portfolio.styling*/
+    .repo-item-list {
+        width: 90%;
     }
 
 }

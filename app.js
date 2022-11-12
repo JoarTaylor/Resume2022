@@ -1,6 +1,6 @@
 //info-elements
-const leftInfo = document.querySelector('.left-info-items');
-const rightInfo = document.querySelector('.right-info-items');
+const leftInfo = document.querySelector('.left-info-items ul');
+const rightInfo = document.querySelector('.right-info-items ul');
 
 //object with info about me
 const joar = {

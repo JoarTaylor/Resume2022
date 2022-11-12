@@ -65,8 +65,8 @@ window.onclick = function(event) {
         eductationArray.sort(({Completion:a}, {Completion: b}) => b-a);
         eductationArray.forEach((course) => {
 
-            const eduDetails = document.createElement('ul');
-            const eduDescription = document.createElement('li');
+            const eduDetails = document.createElement('li');
+            const eduDescription = document.createElement('ul');
             eduDescription.className = "education-list";
     
             const eduEntries = Object.entries(course);
@@ -88,8 +88,8 @@ window.onclick = function(event) {
         eductationArray.sort(({Completion:a}, {Completion: b}) => a-b);
         eductationArray.forEach((course) => {
 
-            const eduDetails = document.createElement('ul');
-            const eduDescription = document.createElement('li');
+            const eduDetails = document.createElement('li');
+            const eduDescription = document.createElement('ul');
             eduDescription.className = "education-list";
             
             const eduEntries = Object.entries(course);
@@ -106,8 +106,8 @@ window.onclick = function(event) {
 
     //output work-info
     workArray.forEach((workplace) => {
-        const workDetails = document.createElement('ul');
-        const workDescription = document.createElement('li');
+        const workDetails = document.createElement('li');
+        const workDescription = document.createElement('ul');
         workDescription.className = "work-list";
 
         const workEntries = Object.entries(workplace);

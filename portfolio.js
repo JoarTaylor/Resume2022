@@ -1,4 +1,4 @@
-const repoList = document.querySelector('.main-article ul');
+const repoList = document.querySelector('.main-article');
 const url = "https://api.github.com/users/JoarTaylor/repos"
 const urlLocal = "./data.json";
 const repoHeader = document.querySelector('.main-section h3');
@@ -36,8 +36,7 @@ getRepos().then((data) => {
 
     githubArray.forEach((repo) => {
 
-        const repoItem = document.createElement('li');
-        repoList.appendChild(repoItem);
+        
         
     getrepoImages().then((imgData) => {
         let imgRepoArray = imgData.repoImages;
@@ -47,6 +46,7 @@ getRepos().then((data) => {
 
             //pair github-repo with image-id in json-file
             if(repoImg.id == repo.id) {
+
                 const portfolioImage = document.createElement('img');
                 portfolioImage.className = "portfolio-image";
                 portfolioImage.src = repoImg.src;
@@ -63,9 +63,10 @@ getRepos().then((data) => {
                 repoLink.className = "repo-link";
                 
                 
-                repoLink.innerHTML = `<br>` +  `Github repo <i class='fa-solid fa-up-right-from-square'></i>`;
+                repoLink.innerHTML = `<br>` +  `Github <i class='fa-solid fa-up-right-from-square'></i>`;
                 
                 const liveGameLink = document.createElement('a');
+                liveGameLink.className = "live-game-link";
                 liveGameLink.href = repoImg.liveLink;
                 liveGameLink.target = "_blank";
                 liveGameLink.rel = "noreferrer noopener";
@@ -73,12 +74,14 @@ getRepos().then((data) => {
                 const repoDetailList = document.createElement('div');
                 repoDetailList.className = "repo-item-list";
 
-                repoItem.appendChild(repoDetailList);
+                
                 repoDetailList.appendChild(repoName);
                 repoDetailList.appendChild(repoDescription);
                 repoDetailList.appendChild(liveGameLink);
                 repoDetailList.appendChild(repoLink);
                 liveGameLink.appendChild(portfolioImage);
+
+                repoList.appendChild(repoDetailList)
             }
         })
     })
