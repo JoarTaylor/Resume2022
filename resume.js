@@ -1,8 +1,8 @@
 //resume-elements
-const workHeader = document.querySelector('.left-article h4')
-const workList = document.querySelector('.left-article ul')
-const educationHeader = document.querySelector('.right-article h4')
-const educationList = document.querySelector('.right-article ul')
+const workHeader = document.querySelector('.left-article h4');
+const jobs = document.querySelector('.jobs');
+const educationHeader = document.querySelector('.right-article h4');
+const educations = document.querySelector('.educations');
 const myDropDown = document.querySelector(".dropdown-content");
 const dropBtn = document.querySelector('.dropbtn');
 
@@ -42,41 +42,39 @@ getData().then((data) => {
     }
 
     // Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
+    window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+        }
     }
-  }
-}
+    }
 
     //recent education as default
     sortRecent();   
 
-//sort by recent education
+    //sort by recent education
     recentOption.addEventListener('click', sortRecent);
     function sortRecent() {
-        educationList.innerHTML = null;
+        educations.innerHTML = null;
         eductationArray.sort(({Completion:a}, {Completion: b}) => b-a);
         eductationArray.forEach((course) => {
-
-            const eduDetails = document.createElement('li');
-            const eduDescription = document.createElement('ul');
+            const eduDescription = document.createElement('div');
             eduDescription.className = "education-list";
-    
             const eduEntries = Object.entries(course);
             eduEntries.forEach(([key, value]) => {
-                eduDetails.appendChild(eduDescription);
-                const eduDetailsItem = document.createElement('li');
-                eduDetailsItem.innerHTML = `<span style="font-weight: bold;">${key}:</span> `  + value;
-                eduDescription.appendChild(eduDetailsItem);
-    
-                educationList.appendChild(eduDetails);
+                eduDescription.innerHTML += `<span style="font-weight: bold;">${key}:</span> ${value} <br> `;
+                educations.appendChild(eduDescription);
+
+                /* function dragstart_handler(ev) {
+                    // Add the target element's id to the data transfer object
+                    ev.dataTransfer.setData("text/plain", ev.target.id);
+                } */
             })
         })
     }
@@ -84,40 +82,31 @@ window.onclick = function(event) {
     //sort by earliest education
     latestOption.addEventListener('click', sortEarliest); 
     function sortEarliest() {
-        educationList.innerHTML = null;
+        educations.innerHTML = null;
         eductationArray.sort(({Completion:a}, {Completion: b}) => a-b);
         eductationArray.forEach((course) => {
-
-            const eduDetails = document.createElement('li');
-            const eduDescription = document.createElement('ul');
+            const eduDescription = document.createElement('div');
             eduDescription.className = "education-list";
-            
             const eduEntries = Object.entries(course);
             eduEntries.forEach(([key, value]) => {
-                
-                eduDetails.appendChild(eduDescription);
-                const eduDetailsItem = document.createElement('li');
-                eduDetailsItem.innerHTML = `<span style="font-weight: bold;">${key}:</span> `  + value;
-                eduDescription.appendChild(eduDetailsItem);
-                educationList.appendChild(eduDetails);
+                eduDescription.innerHTML += `<span style="font-weight: bold;">${key}:</span> ${value} <br> `;
+                educations.appendChild(eduDescription);
             })
         })
     }
 
     //output work-info
     workArray.forEach((workplace) => {
-        const workDetails = document.createElement('li');
-        const workDescription = document.createElement('ul');
+        const workDescription = document.createElement('div');
         workDescription.className = "work-list";
 
         const workEntries = Object.entries(workplace);
         workEntries.forEach(([key, value]) => {
-            workDetails.appendChild(workDescription);
-            const workDetailsItem = document.createElement('li');
-            workDetailsItem.innerHTML = `<span style="font-weight: bold;">${key}:</span> `  + value;
-            workDescription.appendChild(workDetailsItem);
 
-            workList.appendChild(workDetails);
+    
+            workDescription.innerHTML += `<span style="font-weight: bold;">${key}:</span> ${value} <br> `;
+
+            jobs.appendChild(workDescription);
         })
     })
 })

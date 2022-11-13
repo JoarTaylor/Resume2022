@@ -11,9 +11,9 @@ async function getrepoImages() {
         return imgData;
     } else {
         console.log('HTTP-Error: ' + response.status);
+        repoHeader.textContent = 'HTTP-Error: ' + response.status;
     }
 }
-
 
 //get repo-info from github-api
 async function getRepos() {
@@ -28,60 +28,29 @@ async function getRepos() {
     }
 }
 
-
-
-
 getRepos().then((data) => {
     let githubArray = Array.from(data);
 
     githubArray.forEach((repo) => {
-
-        
         
     getrepoImages().then((imgData) => {
-        let imgRepoArray = imgData.repoImages;
+        let localRepoArray = imgData.repoImages;
 
-        imgRepoArray.forEach((repoImg) => {
+        localRepoArray.forEach((localRepo) => {
     
-
             //pair github-repo with image-id in json-file
-            if(repoImg.id == repo.id) {
+            if(localRepo.id == repo.id) {
 
-                const portfolioImage = document.createElement('img');
-                portfolioImage.className = "portfolio-image";
-                portfolioImage.src = repoImg.src;
+                const repoItem = document.createElement('div');
+                repoItem.className = "repo-item-list";
+                repoItem.innerHTML = `
+                <h2>${repo.name}</h2>
+                <p>${repo.description}</p>
+                <a class="live-game-link" href="${localRepo.liveLink}"><img class="portfolio-image" src="${localRepo.src}"</img></a>
+                <a class ="repo-link" href="${repo.html_url}" rel="noreferrer noopener" target="_blank">Github <i class="fa-solid fa-up-right-from-square"></i></a>
+                `;
 
-                const repoName = document.createElement('h2');
-                repoName.innerHTML = repo.name;
-
-                const repoDescription = document.createElement('p');
-                repoDescription.innerHTML = repo.description;
-                
-
-                const repoLink = document.createElement('a');
-                repoLink.href = repo.html_url;
-                repoLink.className = "repo-link";
-                
-                
-                repoLink.innerHTML = `<br>` +  `Github <i class='fa-solid fa-up-right-from-square'></i>`;
-                
-                const liveGameLink = document.createElement('a');
-                liveGameLink.className = "live-game-link";
-                liveGameLink.href = repoImg.liveLink;
-                liveGameLink.target = "_blank";
-                liveGameLink.rel = "noreferrer noopener";
-
-                const repoDetailList = document.createElement('div');
-                repoDetailList.className = "repo-item-list";
-
-                
-                repoDetailList.appendChild(repoName);
-                repoDetailList.appendChild(repoDescription);
-                repoDetailList.appendChild(liveGameLink);
-                repoDetailList.appendChild(repoLink);
-                liveGameLink.appendChild(portfolioImage);
-
-                repoList.appendChild(repoDetailList)
+                repoList.appendChild(repoItem);
             }
         })
     })

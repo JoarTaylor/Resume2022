@@ -89,10 +89,12 @@ main {
 
 .education-list {
     margin: 0vh 0vh 4vh 2vh;
+    font-size: 0.8rem;
 }
 
 .work-list {
     margin: 0vh 2vh 4vh 0vh;
+    font-size: 0.8rem;
 }
 
 .education-list > li:first-child {
@@ -183,6 +185,7 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 1vh;
 }
 
 .name {
@@ -196,7 +199,7 @@ h2 {
 }
 
 p {
-    margin: 0 4vw;
+    margin: 2vh 4vh;
     align-content: flex-start;
     text-align: center;
     height: 10vh;
