@@ -36,7 +36,6 @@ getData().then((data) => {
 
     //creating dropdown
     dropBtn.addEventListener('click', dropDown);
-
     function dropDown() {
         document.getElementById("myDropdown").classList.toggle("show");
     }
@@ -70,11 +69,6 @@ getData().then((data) => {
             eduEntries.forEach(([key, value]) => {
                 eduDescription.innerHTML += `<span style="font-weight: bold;">${key}:</span> ${value} <br> `;
                 educations.appendChild(eduDescription);
-
-                /* function dragstart_handler(ev) {
-                    // Add the target element's id to the data transfer object
-                    ev.dataTransfer.setData("text/plain", ev.target.id);
-                } */
             })
         })
     }
@@ -99,13 +93,9 @@ getData().then((data) => {
     workArray.forEach((workplace) => {
         const workDescription = document.createElement('div');
         workDescription.className = "work-list";
-
         const workEntries = Object.entries(workplace);
         workEntries.forEach(([key, value]) => {
-
-    
             workDescription.innerHTML += `<span style="font-weight: bold;">${key}:</span> ${value} <br> `;
-
             jobs.appendChild(workDescription);
         })
     })

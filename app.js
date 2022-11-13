@@ -19,7 +19,6 @@ joarEntries.forEach(([key, value]) => {
     infoLabel.classList.add('left-listitems');
     leftInfo.appendChild(infoLabel);
     
-
     const infoContent = document.createElement('li');
     infoContent.innerHTML = `${value}`;
     infoContent.classList.add('right-listitems')
