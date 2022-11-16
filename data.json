@@ -88,6 +88,11 @@
         "src": "images/throwdices.png",
         "id": "565097964",
         "liveLink": "https://joartaylor.github.io/ThrowDices/"
+        },
+        {
+        "src": "images/minesweeper.png",
+        "id": "566896593",
+        "liveLink": "https://joartaylor.github.io/mine-sweeper-js/"
         }
     ] 
 }
